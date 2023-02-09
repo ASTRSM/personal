@@ -7,6 +7,8 @@ import glowie from '../../public/images/glowie.png'
 import wave from '../../public/images/wave.svg'
 import glowieWave from '../../public/images/glowieWave.png'
 import star from '../../public/images/star.svg'
+import circle from '../../public/images/circle.png'
+import TimelineItem from '@/components/TimelineItem'
 
 export default function Home() {
   return (
@@ -34,16 +36,29 @@ export default function Home() {
           </div>
           <Image src={glowie} priority alt='glowie' width='auto' height='auto' className='absolute top-0 left-0 w-fit h-[1000px] md:h-screen object-contain -z-10'/>
         </section>
-        <section id='profile' className='h-screen flex justify-center gap-32 xl:gap-60 relative items-center xl:items-start'>
-          <div className='flex flex-col max-w-md gap-10'>
-            <div className='flex justify-around items-center'>
-            <Title text={['PRO',<br key='profile'></br>,'FILE']} jp='プロファイル'/>
-            <Image src={glowieWave} alt='glowie wave' width='auto' height={150} className='object-contain w-fit lg:hidden' />
+        <section id='profile' className='h-screen flex justify-center xl:justify-between xl:gap-0 relative items-center xl:items-start 2xl:m-44'>
+          <div className='flex flex-col max-w-md gap-10 py-10 [&>*]:z-20 md:mr-10'>
+            <div className='flex justify-center gap-10 xl:justify-start items-center'>
+              <Title text={['PRO',<br key='profile'></br>,'FILE']} jp='プロファイル'/>
+              <Image src={glowieWave} alt='glowie wave' width='auto' height={150} className='object-contain w-fit lg:hidden' />
             </div>
-            <p className='text-white text-justify'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit repellendus dicta, eos architecto temporibus exercitationem inventore eligendi qui, ipsam, animi ipsum optio quaerat expedita commodi nemo quisquam libero provident facilis!</p>
+            <p className='text-white text-justify'>Hardworking College Student seeking opportunity. Bringing forth a motivated attitude and a variety of powerful skills. I'm honest and punctual, I work well in a team but also on my own as I like to set myself goals that I will achieve. I have a creative mind and am always up for new challenges.</p>
           </div>
           <Image src={star} alt='star' width='auto' height='auto' className='object-contain absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-50' />
           <Image src={glowieWave} alt='glowie wave' width='auto' height={900} className='object-contain w-fit h-3/6 xl:h-5/6 self-center hidden lg:block' />
+        </section>
+        <section id='timeline' className='flex flex-col md:flex-row justify-between 2xl:m-44 items-center xl:items-start [&>*]:z-20'>
+          <div className='flex md:flex-col xl:justify-start items-center justify-center gap-10'>
+            <Title text={['TIME',<br key='timeline'></br>,'LINE']} jp='歴史'/>
+            <Image src={circle} alt='circle' width='auto' height={150} className='object-contain w-fit h-[150px] -z-10 md:hidden opacity-90' />
+            <Image src={circle} alt='circle' width='auto' height={900} className='hidden object-contain w-fit absolute -z-10 md:block opacity-90'/>
+          </div>
+          <div className='flex flex-col justify-start my-20 text-white md:ml-10'>
+            <TimelineItem date='Aug 2022 - Dec 2022' title='PT Jaklingko' work='IT Developer' />
+            <TimelineItem date='Feb 2022 - Aug 2022' title='Dicoding Kampus Merdeka' work='Front-End & Back-End Web Developer' />
+            <TimelineItem date='2019 - 2023' title='Gunadarma University' work='Informtaion System' />
+            <TimelineItem date='2017 - 2019' title='SMKN 7 Jakarta' work='Computer & Network Engineering' />
+          </div>
         </section>
       </main>
     </>
