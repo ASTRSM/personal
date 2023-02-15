@@ -3,6 +3,6 @@
   "plugins": [
     "@next/next",
     "react",
-    "tailwindcss",
-  ],
+    "tailwindcss"
+  ]
 }

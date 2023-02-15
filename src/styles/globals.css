@@ -6,6 +6,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #EB3F3F;
+  --color-background: #1d1d1d;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* .swiper-wrapper {
+  @apply items-center !important;
+} */
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 0 !important;
+  @apply mt-5 lg:mt-8 !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  @apply m-0 !important;
+}
+
+.swiper-pagination-bullet {
+  @apply h-auto w-32 rounded-none bg-transparent opacity-100 border border-transparent hover:border-primary text-primary text-sm md:text-base font-inter py-2 px-4 my-0 transition-all duration-300 ease-in-out cursor-pointer !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary text-background opacity-100 !important;
+}
+
+.swiper-slide .swiper-slide-active, .swiper-slide .swiper-slide-next, .swiper-slide .swiper-slide-prev {
+  @apply flex flex-col items-center justify-center !important;
 }
