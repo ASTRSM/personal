@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import TimelineItem from '@/components/TimelineItem'
 import Slideshow from '@/components/slideshow'
+import Icons from '@/components/Icons'
 //images
 import glowie from '../../public/images/glowie.png'
 import wave from '../../public/images/wave.svg'
@@ -12,7 +13,11 @@ import star from '../../public/images/star.svg'
 import circle from '../../public/images/circle.png'
 import frameworkgif from '../../public/images/framework.gif'
 import tools from '../../public/images/tools.png'
-import Icons from '@/components/Icons'
+import sun from '../../public/images/sun.png'
+import linkedin from '../../public/images/icons/linkedin.svg'
+import github from '../../public/images/icons/github.svg'
+import mail from '../../public/images/icons/mail.svg'
+import whatsapp from '../../public/images/icons/whatsapp.svg'
 
 export default function Home() {
   return (
@@ -23,7 +28,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className=' text-primary mx-5 md:mx-20 overflow-hidden'>
+      <main className=' text-primary mx-5 md:mx-20'>
         <Noise />
         <section className='[&_*]:transition-all'>
           <div className='[&>*]:z-20 flex flex-col items-center justify-center h-screen'>
@@ -66,7 +71,7 @@ export default function Home() {
         </section>
         <section id='works' className='flex flex-col justify-between 2xl:mx-44 2xl:mt-44 items-center xl:items-start [&>*]:z-20'>
           <Title text={['WORKS']} jp='作品'/>
-          <div className='border border-primary w-full h-full flex justify-center items-center 2xl:px-14 2xl:pt-14 my-20 relative overflow-visible'>
+          <div className='border border-primary w-full h-full flex justify-center items-center 2xl:px-14 2xl:pt-14 my-10 md:my-20 relative overflow-visible'>
             <Image src={wave} alt='wave logo' width='auto' height='auto' className='hidden md:block mb-8 h-36 w-auto absolute lg:-top-20 lg:-left-20 lg:m-8 -z-10' />
             <Slideshow keyword='jasmine' />
           </div>
@@ -77,6 +82,38 @@ export default function Home() {
             <Image src={tools} alt='tools' width='auto' height='auto' className='w-fit h-32 sm:h-60 object-contain'/>
           </div>
           <Icons />
+        </section>
+        <section id='contact' className='h-screen flex justify-center xl:justify-between xl:gap-0 relative items-center xl:items-start 2xl:m-44'>
+          <div className='flex flex-col gap-0 xl:gap-10 py-10 [&>*]:z-20 md:mr-10 w-full'>
+            <div className='flex justify-center gap-2 xl:justify-start items-center mb-10'>
+              <Title text={['CONTACT']} jp='連絡'/>
+              <Image src={sun} alt='sun' width='auto' height={100} className='object-contain w-fit lg:hidden -z-10' />
+            </div>
+            <div className='flex justify-between w-full relative bg-custom-gradient p-10 border border-primary text-xs sm:text-base'>
+              <div className='max-w-md space-y-5 text-white'>
+                <p className='text-justify'>I&apos;m always open to new opportunities and challenges. If you have any questions or just want to say hi, feel free to contact me.</p>
+                <div className='grid grid-cols-2 gap-5 font-notojp font-extralight text-xs sm:text-lg'>
+                  <a href='mailto:dhafadefrita@gmail.com' target='_blank' rel='noreferrer' className='space-y-1 p-1 outline-1 hover:outline hover:outline-primary hover:bg-background transition-all'>
+                    <Image src={mail} alt='gmail' width={30} height={30} className='w-fit  h-7 object-contain' />
+                    <p className='font-inter'>dhafadefrita@gmail.com</p>
+                  </a>
+                  <a href='https://www.linkedin.com/in/dhafad/' target='_blank' rel='noreferrer' className='space-y-1 p-1 outline-1 hover:outline hover:outline-primary hover:bg-background transition-all'>
+                    <Image src={linkedin} alt='linkedin' width={30} height={30} className='w-fit h-7 object-contain' />
+                    <p className='font-inter'>dhafad</p>
+                  </a>
+                  <a href='https://github.com/ASTRSM' target='_blank' rel='noreferrer' className='space-y-1 p-1 outline-1 hover:outline hover:outline-primary hover:bg-background transition-all'>
+                    <Image src={github} alt='github' width={30} height={30} className='w-fit h-7 object-contain' />
+                    <p className='font-inter'>ASTRSM</p>
+                  </a>
+                  <a href='https://wa.me/6285959400546' target='_blank' rel='noreferrer' className='space-y-1 p-1 outline-1 hover:outline hover:outline-primary hover:bg-background transition-all'>
+                    <Image src={whatsapp} alt='whatsapp' width={30} height={30} className='w-fit h-7 object-contain' />
+                    <p className='font-inter'>(+62)85959400546</p>
+                  </a>
+                </div>
+              </div>
+              <Image src={sun} alt='sun' width='auto' height={700} className='object-contain absolute self-center hidden lg:block -z-10 -right-36 xl:-right-32 w-fit h-[500px] xl:h-[700px]' />
+            </div>
+          </div>
         </section>
       </main>
     </>
