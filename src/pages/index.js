@@ -5,6 +5,7 @@ import Image from 'next/image'
 import TimelineItem from '@/components/TimelineItem'
 import Slideshow from '@/components/slideshow'
 import Icons from '@/components/Icons'
+import Music from '../components/Music'
 //images
 import glowie from '../../public/images/glowie.png'
 import wave from '../../public/images/wave.svg'
@@ -18,8 +19,9 @@ import linkedin from '../../public/images/icons/linkedin.svg'
 import github from '../../public/images/icons/github.svg'
 import mail from '../../public/images/icons/mail.svg'
 import whatsapp from '../../public/images/icons/whatsapp.svg'
+import triangle from '../../public/images/triangle.png'
 
-export default function Home() {
+export default function Home({ videos }) {
   return (
     <>
       <Head>
@@ -83,7 +85,7 @@ export default function Home() {
           </div>
           <Icons />
         </section>
-        <section id='contact' className='h-screen flex justify-center xl:justify-between xl:gap-0 relative items-center xl:items-start 2xl:m-44'>
+        <section id='contact' className='h-screen flex justify-center xl:justify-between xl:gap-0 relative items-center xl:items-start 2xl:mx-44 2xl:mt-44'>
           <div className='flex flex-col gap-0 xl:gap-10 py-10 [&>*]:z-20 md:mr-10 w-full'>
             <div className='flex justify-center gap-2 xl:justify-start items-center mb-10'>
               <Title text={['CONTACT']} jp='連絡'/>
@@ -115,7 +117,40 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className='2xl:mx-44 relative flex items-center xl:items-start flex-col gap-20'>
+          <Title text={['MISC.']} jp='その他'/>
+          <div className='flex flex-col md:flex-row text-lg w-full gap-y-10 gap-x-40 xl:gap-x-10 flex-wrap xl:flex-nowrap justify-center xl:justify-between [&>*]:z-20] mb-44'>
+            <div className='flex flex-col gap-2'>
+              <h2 className='bg-primary font-inter font-extralight text-white text-center'>LANGUAGE</h2>
+              <p className='font-inter font-extralight text-white'>Indonesian / <span className='inter-notojp'>母語</span></p>
+              <p className='font-inter font-extralight text-white'>English / <span className='inter-notojp'>英語</span></p>
+              <p className='font-inter font-extralight text-white'>Japanese / <span className='inter-notojp'>日本語</span></p> 
+            </div>
+            <div className='flex flex-col gap-2'>
+              <h2 className='text-primary font-crake font-extralight border border-primary md:border-none text-center md:text-left'>HOBBY</h2>
+              <p className='font-inter font-extralight text-white'>Reading / <span className='inter-notojp'>読書</span></p>
+              <p className='font-inter font-extralight text-white'>Guitar Jamming / <span className='inter-notojp'>弾き語り</span></p>
+              <p className='font-inter font-extralight text-white'>Learning Japanese / <span className='inter-notojp'>日本語勉強</span></p>
+            </div>
+            <div className='flex flex-col gap-2 max-w-2xl'>
+              <a href='https://www.youtube.com/playlist?list=PL7lkTmqIlvrG1_2RRpLbsqBZ4jQufKudB' className='text-primary font-inter font-extralight hover:text-white transition-colors w-fit' target='_blank' rel='noreferrer'>MUSIC PLAYLIST /</a>
+              <Music videos={videos} />
+            </div>
+          </div>
+          <Image src={triangle} alt='triangle' width='auto' height='auto' className='object-contain w-fit absolute xl:-bottom-0 xl:-left-96 -z-10 bottom-1/2 -right-52 ' />
+        </section>
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3000/api/playlist');
+  const data = await res.json();
+
+  return {
+    props: {
+      videos: data,
+    },
+  };
 }
