@@ -1,16 +1,6 @@
-import { google } from 'googleapis';
+import playlist from '@/helpers/playlist'
 
 export default async function handler(req, res) {
-  const youtube = google.youtube({
-    version: 'v3',
-    auth: 'AIzaSyCQYBVZi82kP8XUpgJajvncBVKBTR4tzO0',
-  });
-
-  const response = await youtube.playlistItems.list({
-    part: 'snippet',
-    playlistId: 'PL7lkTmqIlvrG1_2RRpLbsqBZ4jQufKudB',
-    maxResults: 4,
-  });
-
-  res.status(200).json(response.data.items);
+  const data = await playlist();
+  res.status(200).json(data);
 }

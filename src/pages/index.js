@@ -6,6 +6,7 @@ import TimelineItem from '@/components/TimelineItem'
 import Slideshow from '@/components/slideshow'
 import Icons from '@/components/Icons'
 import Music from '../components/Music'
+import playlist from '@/helpers/playlist'
 //images
 import glowie from '../../public/images/glowie.png'
 import wave from '../../public/images/wave.svg'
@@ -145,8 +146,7 @@ export default function Home({ videos }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/playlist');
-  const data = await res.json();
+  const data = await playlist();
 
   return {
     props: {
