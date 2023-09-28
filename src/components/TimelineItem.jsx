@@ -7,7 +7,7 @@ export default function TimelineItem({ date, title, work }) {
       <TimelineDot />
       <div>
         <p className='font-noto-jp font-extralight'>{title}</p>
-        <p className='font-noto'>{work}</p>
+        <p className='font-noto-jp'>{work}</p>
       </div>
     </div>
   )
