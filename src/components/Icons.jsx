@@ -18,31 +18,38 @@ import ps from '../../public/images/icons/ps.svg'
 import psql from '../../public/images/icons/psql.svg'
 import router from '../../public/images/icons/router.svg'
 import redux from '../../public/images/icons/redux.svg'
+import laravel from '../../public/images/icons/laravel.svg'
+import typescript from '../../public/images/icons/typescript.svg'
+import php from '../../public/images/icons/php.svg'
 import Image from 'next/image'
+import Icon from './Icon'
 
 export default function Icons() {
   return (
     <div className='flex flex-wrap gap-5 justify-center items-center mt-10 md:mt-20 md:mx-10 xl:mx-40'>
-      <Image src={ai} alt='Adobe Illustrator' title='Adobe Illustrator' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={figma} alt='Figma' title='Figma' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={css} alt='CSS' title='CSS' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={html} alt='HTML' title='HTML' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={js} alt='JavaScript' title='JavaScript' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={react} alt='React' title='React' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={next} alt='Next.js' title='Next.js' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={tailwind} alt='Tailwind CSS' title='Tailwind CSS' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={firebase} alt='Firebase' title='Firebase' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={express} alt='Express' title='Express' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={cypress} alt='Cypress' title='Cypress' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={jest} alt='Jest' title='Jest' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={hapi} alt='Hapi' title='Hapi' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={jquery} alt='jQuery' title='jQuery' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={mysql} alt='MySQL' title='MySQL' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={postman} alt='Postman' title='Postman' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={ps} alt='Adobe Photoshop' title='Adobe Photoshop' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={psql} alt='PostgreSQL' title='PostgreSQL' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={router} alt='React Router' title='React Router' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
-      <Image src={redux} alt='Redux' title='Redux' width={80} height={80} className='h-14 lg:h-20 hover:scale-110 transition-all duration-300' />
+      <Icon image={ai} title='Adobe Illustrator' />
+      <Icon image={figma} title='Figma' />
+      <Icon image={css} title='CSS' />
+      <Icon image={html} title='HTML' />
+      <Icon image={js} title='Javascript' />
+      <Icon image={react} title='React' />
+      <Icon image={next} title='NextJs' />
+      <Icon image={tailwind} title='Tailwind' />
+      <Icon image={firebase} title='Firebase' />
+      <Icon image={express} title='ExpressJs' />
+      <Icon image={cypress} title='Cypress' />
+      <Icon image={jest} title='Jest' />
+      <Icon image={hapi} title='HapiJS' />
+      <Icon image={jquery} title='JQuery' />
+      <Icon image={mysql} title='MySQL' />
+      <Icon image={postman} title='Postman' />
+      <Icon image={ps} title='Photoshop' />
+      <Icon image={psql} title='PostgreSQL' />
+      <Icon image={router} title='React Router' />
+      <Icon image={redux} title='React Redux' />
+      <Icon image={laravel} title='Laravel' />
+      <Icon image={typescript} title='Typescript' />
+      <Icon image={php} title='php' />
     </div>
   )
 }
