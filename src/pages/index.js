@@ -182,6 +182,11 @@ export default function Home({ videos }) {
           </div>
           <div className='flex flex-col justify-start my-20 text-white md:ml-10'>
           <TimelineItem
+              date='Feb 2024 - Present'
+              title='PT Aero System Indonesia'
+              work='Software Engineer Trainee'
+          />
+          <TimelineItem
               date='Feb 2023 - Jul 2022'
               title='Dicoding Indonesia'
               work='Mentor Pengembang Front-End Web dan Back-End'
@@ -200,11 +205,6 @@ export default function Home({ videos }) {
               date='2019 - 2023'
               title='Gunadarma University'
               work='Information System (3.85 GPA)'
-            />
-            <TimelineItem
-              date='2017 - 2019'
-              title='SMKN 7 Jakarta'
-              work='Computer & Network Engineering'
             />
           </div>
         </section>
@@ -282,7 +282,7 @@ export default function Home({ videos }) {
                       height={30}
                       className='w-fit  h-7 object-contain'
                     />
-                    <p className='font-inter'>dhafadefrita@gmail.com</p>
+                    <p className='font-inter'>ddefrito@gmail.com</p>
                   </a>
                   <a
                     href='https://www.linkedin.com/in/dhafad/'
