@@ -5,13 +5,13 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'inter': ['Inter', 'sans-serif'],
-      'playfair': ['Playfair Display', 'serif'],
-      'bodoni': ['Bodoni Moda', 'serif'],
+      'inter': ['var(--font-inter)', 'sans-serif'],
+      'playfair': ['var(--font-playfair-display)', 'serif'],
+      'bodoni': ['var(--font-bodoni-moda)', 'serif'],
       'crake': ['Crake', 'serif'],
-      'imbue': ['Imbue', 'serif'],
-      'noto': ['Noto Serif Display', 'serif'],
-      'notojp': ['Noto Serif JP', 'serif'],
+      'imbue': ['var(--font-imbue)', 'serif'],
+      'noto': ['var(--font-noto-serif-display)', 'serif'],
+      'notojp': ['var(--font-notojp)', 'serif'],
     },
     extend: {
       colors: {

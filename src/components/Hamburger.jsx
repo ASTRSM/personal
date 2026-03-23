@@ -1,9 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import wave from '../../public/images/wave_stroke.svg'
 
 const handleClick = () => {
   document.querySelector('#hamburger').classList.toggle('open')
-  document.querySelector('#sidebar').classList.toggle('opacity-0')
+  document.querySelector('#sidebar').classList.toggle('hidden')
 }
 
 export function Hamburger() {
@@ -25,7 +27,7 @@ export function Hamburger() {
 
 export function Sidebar() {
   return (
-    <div id='sidebar' className='opacity-0 transition-opacity duration-300 z-50 fixed w-full h-full bg-background lg:hidden'>
+    <div id='sidebar' className='hidden transition-opacity duration-300 z-50 fixed w-full h-full bg-background lg:hidden'>
       <ul className='font-inter font-bold text-primary hover:[&>*]:text-secondary mx-12 my-24 text-3xl gap-6 flex flex-col'>
         <li className='text-xl font-thin font-notojp'>目次</li>
         <li>

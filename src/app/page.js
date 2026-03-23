@@ -1,13 +1,14 @@
 import Noise from '@/components/Noise'
 import Title from '@/components/Title'
-import Head from 'next/head'
 import Image from 'next/image'
 import TimelineItem from '@/components/TimelineItem'
 import Slideshow from '@/components/slideshow'
 import Icons from '@/components/Icons'
-import Music from '../components/Music'
+import Music from '@/components/Music'
 import playlist from '@/helpers/playlist'
-import { heroObserver } from '@/helpers/observers'
+import { Hamburger, Sidebar } from '@/components/Hamburger'
+import ClientSideEffects from '@/components/ClientSideEffects'
+
 //images
 import glowie from '../../public/images/glowie.png'
 import wave from '../../public/images/wave.svg'
@@ -22,22 +23,13 @@ import github from '../../public/images/icons/github.svg'
 import mail from '../../public/images/icons/mail.svg'
 import whatsapp from '../../public/images/icons/whatsapp.svg'
 import triangle from '../../public/images/triangle.png'
-import { useEffect } from 'react'
-import { Hamburger, Sidebar } from '@/components/Hamburger'
 
-export default function Home({ videos }) {
-  useEffect(() => {
-    heroObserver()
-  }, [])
+export default async function Home() {
+  const videos = await playlist()
 
   return (
     <>
-      <Head>
-        <title>Dhafa&apos;s Personal Website</title>
-        <meta name='description' content='Dhafa personal portofolio website' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <ClientSideEffects />
       <Sidebar />
       <main className=' text-primary px-5 md:px-20 overflow-x-hidden'>
         <Hamburger />
@@ -67,8 +59,8 @@ export default function Home({ videos }) {
             <Image
               src={wave}
               alt='wave logo'
-              width='auto'
-              height='auto'
+              width={144}
+              height={144}
               className='mb-8 h-36 w-auto lg:absolute lg:top-0 lg:right-0 lg:m-8 -z-10'
             />
             <h2 className='text-2xl font-notojp font-black self-start md:self-auto'>
@@ -109,8 +101,8 @@ export default function Home({ videos }) {
             src={glowie}
             priority
             alt='glowie'
-            width='auto'
-            height='auto'
+            width={1000}
+            height={1000}
             className='absolute top-0 left-0 w-fit h-[1000px] md:h-screen object-contain -z-10'
           />
         </section>
@@ -127,7 +119,7 @@ export default function Home({ videos }) {
               <Image
                 src={glowieWave}
                 alt='glowie wave'
-                width='auto'
+                width={150}
                 height={150}
                 className='object-contain w-fit lg:hidden -z-10'
               />
@@ -144,14 +136,14 @@ export default function Home({ videos }) {
           <Image
             src={star}
             alt='star'
-            width='auto'
-            height='auto'
+            width={500}
+            height={500}
             className='object-contain absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-50'
           />
           <Image
             src={glowieWave}
             alt='glowie wave'
-            width='auto'
+            width={900}
             height={900}
             className='object-contain w-fit h-3/6 xl:h-5/6 self-center hidden lg:block -z-10'
           />
@@ -168,14 +160,14 @@ export default function Home({ videos }) {
             <Image
               src={circle}
               alt='circle'
-              width='auto'
+              width={150}
               height={150}
               className='object-contain w-fit h-[150px] -z-10 md:hidden opacity-90'
             />
             <Image
               src={circle}
               alt='circle'
-              width='auto'
+              width={900}
               height={900}
               className='hidden object-contain w-fit absolute -z-10 md:block opacity-90'
             />
@@ -187,7 +179,7 @@ export default function Home({ videos }) {
               work='Software Engineer Trainee'
           />
           <TimelineItem
-              date='Feb 2023 - Jul 2022'
+              date='Feb 2023 - Jul 2023'
               title='Dicoding Indonesia'
               work='Mentor Pengembang Front-End Web dan Back-End'
             />
@@ -217,8 +209,8 @@ export default function Home({ videos }) {
             <Image
               src={wave}
               alt='wave logo'
-              width='auto'
-              height='auto'
+              width={144}
+              height={144}
               className='hidden md:block mb-8 h-36 w-auto absolute lg:-top-20 lg:-left-20 lg:m-8 -z-10'
             />
             <Slideshow keyword='jasmine' />
@@ -232,15 +224,15 @@ export default function Home({ videos }) {
             <Image
               src={frameworkgif}
               alt='framework gif'
-              width='auto'
-              height='auto'
+              width={240}
+              height={240}
               className='w-fit h-32 sm:h-60 object-contain'
             />
             <Image
               src={tools}
               alt='tools'
-              width='auto'
-              height='auto'
+              width={240}
+              height={240}
               className='w-fit h-32 sm:h-60 object-contain'
             />
           </div>
@@ -256,7 +248,7 @@ export default function Home({ videos }) {
               <Image
                 src={sun}
                 alt='sun'
-                width='auto'
+                width={100}
                 height={100}
                 className='object-contain w-fit lg:hidden -z-10'
               />
@@ -334,7 +326,7 @@ export default function Home({ videos }) {
               <Image
                 src={sun}
                 alt='sun'
-                width='auto'
+                width={700}
                 height={700}
                 className='object-contain absolute self-center hidden lg:block -z-10 -right-36 xl:-right-32 w-fit h-[500px] xl:h-[700px]'
               />
@@ -388,22 +380,12 @@ export default function Home({ videos }) {
           <Image
             src={triangle}
             alt='triangle'
-            width='auto'
-            height='auto'
+            width={500}
+            height={500}
             className='object-contain w-fit absolute xl:-bottom-0 xl:right-96 -z-10 bottom-1/2 -right-52 '
           />
         </section>
       </main>
     </>
   )
-}
-
-export async function getServerSideProps() {
-  const data = await playlist()
-
-  return {
-    props: {
-      videos: data
-    }
-  }
 }
